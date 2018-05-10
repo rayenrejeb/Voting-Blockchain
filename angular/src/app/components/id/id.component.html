@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Demo: Take a Selfie With JavaScript</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    
+
+</head>
+<body>
+<div style="text-align:center">
+    <a href="#" id="start-camera" class="visible">Touch here to start the app.</a>
+    <p id="error-message"></p>
+</div>
+
+<form class="row">
+<div class="col-md-4">
+<div class="container1">
+  <div class="app">
+    <video id="camera-stream1"></video>
+    <img id="snap1">
+    <div class="controls">
+      <a href="#" id="delete-photo1" title="Delete Photo" class="disabled"><i class="material-icons">cached</i></a>
+      <a href="#" id="take-photo1" title="Take Photo"><i class="material-icons">camera_alt</i></a>
+    </div>
+    <canvas id="can1"></canvas>
+  </div>
+  </div>
+  <h3>Scan your Face</h3>
+
+</div>
+
+<div class="col-md-4">
+    <div class="container1">
+      <div class="app">
+        <video id="camera-stream2"></video>
+        <img id="snap2">
+        <div class="controls">
+          <a href="#" id="delete-photo2" title="Delete Photo" class="disabled"><i class="material-icons">cached</i></a>
+          <a href="#" id="take-photo2" title="Take Photo"><i class="material-icons">camera_alt</i></a>
+        </div>
+        <canvas id="can2"></canvas>
+      </div>
+      </div>
+      <h3>Scan your front side of your CIN</h3>
+
+</div>
+    <div class="col-md-4">
+        <div class="container1">
+          <div class="app">
+            <video id="camera-stream3"></video>
+            <img id="snap3">
+            <div class="controls">
+              <a href="#" id="delete-photo3" title="Delete Photo" class="disabled"><i class="material-icons">cached</i></a>
+              <a href="#" id="take-photo3" title="Take Photo"><i class="material-icons">camera_alt</i></a>
+            </div>
+        
+            <canvas id="can3"></canvas>
+          </div>
+          </div>
+          <h3>Scan your back side of your CIN</h3>
+    </div>
+
+        </form>
+
+<div style="text-align:center">
+        <input type="button" value="submit" onclick="submit()" class="btn btn-info" id="submitBtn"><br>
+    OR<br>
+
+      <input type="text" size="50" placeholder="place your hash to skip the identification" style="text-align: center"> 
+</div>
+
+</body>
+
+</html>

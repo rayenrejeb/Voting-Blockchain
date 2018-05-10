@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+<div class="container1">
+  <ul class="progressbar">
+      <li class="active" id="wlcm">Welcome</li>
+      <li id="id">Identification</li>
+      <li id="reg">Registration</li>
+      <li id="vote">Vote</li>
+      <li id="cast">Cast</li>
+      <li id="confirm">Confirmation</li>
+      
+  </ul>
+</div>
+<br>
+    <div class="container">
+    <div id="contenu"><router-outlet></router-outlet></div>
+    <div class="right">
+    <a routerLink="/{{itemBack}}" (click)="back()" id="back" ><button class="btn btn-danger">Back</button></a>
+    </div>
+    <div class="left">
+    <a routerLink="/{{itemNext}}" (click)="next()" id="next"><button  class="btn btn-success" >Next</button></a>
+    </div>
+    </div>

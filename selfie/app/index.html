@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Step progress bar - css</title>
+    <meta chartset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+            @import url('/static/assets/css/main.css');
+        </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="container1">
+        <ul class="progressbar">
+            <li class="active" id="wlcm">Welcome</li>
+            <li id="id">Identification</li>
+            <li id="reg">Registration</li>
+            <li id="vote">Vote</li>
+            <li id="cast">Cast</li>
+            <li id="confirm">Confirmation</li>
+            
+        </ul>
+       
+    </div>
+    <br>
+    <div class="container">
+    <center>
+        <div id="contenu">
+            
+        </div>
+    </center>
+    <div class="right">
+    <button id="back" class="btn btn-danger" onclick="back()">Back</button>
+    </div>
+    <div class="left">
+    <button id="next" class="btn btn-success" onclick="next()">Next</button>
+    </div>
+    </div>
+
+    <script>
+        var wlcm = document.getElementById("wlcm");
+        var wlcmContenu = 'Weclome to our website<br>you will need a CIN card to vote<br><img src="/static/assets/img/2.jpg" style="width:200px;height:200px">'
+        var id = '<div>hello</div>'
+     var reg = document.getElementById("reg");
+        var vote = document.getElementById("vote");
+        var cast = document.getElementById("cast");
+        var confirm = document.getElementById("confirm");
+        var contenu = document.getElementById("contenu")
+        var i=0;
+        contenu.innerHTML = wlcmContenu;
+        var backBtn = document.getElementById("back");
+        var nextBtn = document.getElementById("next");
+        backBtn.style.display = "none";
+        
+        function next(){
+            i++;
+            switch(i)
+            {
+                case 1: id.classList.add("active");
+                        contenu.innerHTML = "id";
+                        break;
+                case 2: reg.classList.add("active");
+                        contenu.innerHTML = "Your registration will be confirmed";
+                        break;
+                case 3: vote.classList.add("active");
+                        contenu.innerHTML = "vote";
+                        break;
+                case 4: cast.classList.add("active");
+                        contenu.innerHTML = "cast";
+                        break;
+                case 5: confirm.classList.add("active");
+                        contenu.innerHTML = "confirm";
+                        break;
+                      
+            }
+            if(i==0)
+        {
+            backBtn.style.display = "none";
+        }
+        else if(i==5)
+        {
+            nextBtn.style.display = "none";
+        }
+        else
+        {
+            backBtn.style.display = "inline-block";
+            nextBtn.style.display = "inline-block";
+        }
+        }
+        function back(){
+            i--;
+            switch(i)
+            {
+                case 0: id.classList.remove("active");
+                        contenu.innerHTML = wlcmContenu;
+                        break;
+                case 1: reg.classList.remove("active");
+                        contenu.innerHTML = "id";
+                        break;
+                case 2: vote.classList.remove("active");
+                        contenu.innerHTML = "reg";
+                        break;
+                case 3: cast.classList.remove("active");
+                        contenu.innerHTML = "vote";
+                        break;
+                case 4: confirm.classList.remove("active");
+                        contenu.innerHTML = "cast";
+                        break;
+                
+                      
+            }
+            if(i==0)
+        {
+            backBtn.style.display = "none";
+        }
+        else if(i==5)
+        {
+            nextBtn.style.display = "none";
+        }
+        else
+        {
+            backBtn.style.display = "inline-block";
+            nextBtn.style.display = "inline-block";
+        }
+        }
+        
+    </script>
+</body>
+</html>
